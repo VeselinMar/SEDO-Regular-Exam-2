@@ -4,15 +4,15 @@ pipeline {
     stages {
         stage('Checkout') {
             when {
-                branch 'main'
+                expression { env.BRANCH_NAME == 'main' }
             }
-            steps { 
+            steps {
                 checkout scm
             }
         }
         stage('Restore the project') {
             when {
-                branch 'main'
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 sh 'dotnet restore'
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Build the project') {
             when {
-                branch 'main'
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 sh 'dotnet build --no-restore'
@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Test the project') {
             when {
-                branch 'main'
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 sh 'dotnet test --no-build --verbosity normal'
