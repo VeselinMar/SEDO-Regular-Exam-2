@@ -1,10 +1,14 @@
 pipeline {
     agent any
 
+    when {
+        branch 'main'
+    }
+
     stages {
-	stage ('Checkout') {
-		steps { 
-			checkout scm
+	    stage ('Checkout') {
+		    steps { 
+			    checkout scm
 		}
 	}
         stage('Restore the project') {
