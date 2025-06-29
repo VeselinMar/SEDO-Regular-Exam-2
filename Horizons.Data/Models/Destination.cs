@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Horizons.Data.Common;
-
+// some comment
 namespace Horizons.Data.Models
 {
     public class Destination
