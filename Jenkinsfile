@@ -26,7 +26,7 @@
 //     }
 // }
 
-// Multibranch pipeline
+// Multibranch pipeline (may require github credentials for jenkins)
 pipeline {
     agent any
 
